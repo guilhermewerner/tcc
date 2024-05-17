@@ -1,0 +1,18 @@
+{
+    "name": "@guilhermewerner/tcc1",
+    "version": "0.1.0",
+    "repository": "https://github.com/GuilhermeWerner/TCC1",
+    "author": "Guilherme Werner <guilhermewerner@tribufu.com>",
+    "license": "MIT",
+    "type": "module",
+    "scripts": {
+        "start": "node ./src/bot.js"
+    },
+    "dependencies": {
+        "mineflayer": "^4.20.1",
+        "prismarine-viewer": "^1.28.0"
+    },
+    "devDependencies": {
+        "cross-env": "^7.0.3"
+    }
+}
