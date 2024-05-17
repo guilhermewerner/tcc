@@ -1,1 +1,10 @@
 node_modules/
+server/*
+
+!server/bukkit.yml
+!server/eula.txt
+!server/paper-1.20.4-496.jar
+!server/run.bat
+!server/run.sh
+!server/server.properties
+!server/spigot.yml

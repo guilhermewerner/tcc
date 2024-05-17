@@ -11,6 +11,9 @@ dependencies:
   prismarine-viewer:
     specifier: ^1.28.0
     version: 1.28.0
+  vec3:
+    specifier: ^0.1.10
+    version: 0.1.10
 
 devDependencies:
   cross-env:

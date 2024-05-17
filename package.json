@@ -5,12 +5,10 @@
     "author": "Guilherme Werner <guilhermewerner@tribufu.com>",
     "license": "MIT",
     "type": "module",
-    "scripts": {
-        "start": "node ./src/bot.js"
-    },
     "dependencies": {
         "mineflayer": "^4.20.1",
-        "prismarine-viewer": "^1.28.0"
+        "prismarine-viewer": "^1.28.0",
+        "vec3": "^0.1.10"
     },
     "devDependencies": {
         "cross-env": "^7.0.3"
