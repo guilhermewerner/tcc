@@ -1,0 +1,30 @@
+{
+    "format_version": 2,
+    "header": {
+        "description": "Experimental cameras behavior pack",
+        "name": "experimental cameras",
+        "uuid": "05112080-727b-4ed4-98d4-b099fc75f2be",
+        "version": [
+            0,
+            0,
+            1
+        ],
+        "min_engine_version": [
+            1,
+            18,
+            0
+        ]
+    },
+    "modules": [
+        {
+            "description": "Experimental cameras behavior pack",
+            "type": "data",
+            "uuid": "2dec3de1-0768-4325-83b7-857381b68f8f",
+            "version": [
+                0,
+                0,
+                1
+            ]
+        }
+    ]
+}

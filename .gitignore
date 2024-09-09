@@ -1,10 +1,19 @@
 node_modules/
-server/*
 
-!server/bukkit.yml
-!server/eula.txt
-!server/paper-1.20.4-496.jar
-!server/run.bat
-!server/run.sh
-!server/server.properties
-!server/spigot.yml
+servers/bedrock/*
+!servers/bedrock/allowlist.json
+!servers/bedrock/bedrock_server.exe
+!servers/bedrock/behavior_packs
+!servers/bedrock/config
+!servers/bedrock/definitions
+!servers/bedrock/resource_packs
+!servers/bedrock/server.properties
+
+servers/java/*
+!servers/java/bukkit.yml
+!servers/java/eula.txt
+!servers/java/paper-1.20.4-496.jar
+!servers/java/run.bat
+!servers/java/run.sh
+!servers/java/server.properties
+!servers/java/spigot.yml
