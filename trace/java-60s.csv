@@ -1,0 +1,2 @@
+total_packets,average_packet_size_kb,total_acks,total_syns,average_latency_ms
+10000,707.9825,9800,400,0.1
