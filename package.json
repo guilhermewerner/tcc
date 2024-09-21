@@ -5,6 +5,9 @@
     "author": "Guilherme Werner <guilhermewerner@tribufu.com>",
     "license": "MIT",
     "type": "module",
+    "scripts": {
+        "start": "node src/multi.js"
+    },
     "dependencies": {
         "bedrock-protocol": "^3.39.0",
         "mineflayer": "^4.20.1",
