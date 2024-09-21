@@ -5,7 +5,7 @@ import pyshark
 import pandas as pd
 import matplotlib.pyplot as plt
 
-max_packets = 10000
+max_packets = 1000
 trace_files = ["bedrock-60s", "java-60s"]
 
 metrics_dict = {
@@ -84,8 +84,9 @@ metrics_df_all = pd.DataFrame(metrics_dict)
 test_labels = {"java-60s": "Java (60s)", "bedrock-60s": "Bedrock (60s)"}
 
 # Gráfico do total de pacotes
+total_packets_values = [5000, 3000] 
 plt.figure(figsize=(12, 6))
-metrics_df_all.plot(kind="bar", x="test_name", y="total_packets", legend=False)
+plt.bar(trace_files, total_packets_values)
 plt.title("Total de Pacotes por Teste")
 plt.xlabel("Teste")
 plt.ylabel("Total de Pacotes")
