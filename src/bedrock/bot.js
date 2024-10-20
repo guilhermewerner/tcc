@@ -13,7 +13,7 @@ function getRandomMovement() {
 
 for (let i = startBotIndex; i < endBotIndex; i++) {
     const bot = bedrock.createClient({
-        host: 'localhost',
+        host: 'minecraft2.lan',
         port: 19132,
         username: `Bot${i}`,
         version: '1.20.0',
