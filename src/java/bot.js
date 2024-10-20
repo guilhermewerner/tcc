@@ -13,8 +13,8 @@ function getRandomMovement() {
 
 for (let i = startBotIndex; i < endBotIndex; i++) {
     const bot = mineflayer.createBot({
-        host: 'localhost',
-        port: 25565,
+        host: 'mine.tribufu.com',
+        port: 45565,
         username: `Bot${i}`,
         auth: 'offline'
     });
