@@ -29,21 +29,21 @@ for trace_file in trace_files:
                 timestamp = float(packet.sniff_timestamp)
                 # Tamanho do pacote em bytes
                 packet_size = int(packet.length)
-                
+
                 if "TCP" in packet:
                     ack_flag = int(packet.tcp.flags_ack) if hasattr(packet.tcp, "flags_ack") else 0
                     syn_flag = int(packet.tcp.flags_syn) if hasattr(packet.tcp, "flags_syn") else 0
                 else:
                     ack_flag = 0
                     syn_flag = 0
-                    
+
                 data.append({
                     "timestamp": timestamp,
                     "packet_size": packet_size,
                     "ack_flag": ack_flag,
                     "syn_flag": syn_flag
                 })
-                
+
                 packet_count += 1
 
                 if packet_count >= max_packets:
@@ -76,19 +76,19 @@ for trace_file in trace_files:
         "total_syns": total_syns,
         "average_latency_ms": round(average_latency, 2)
     }])
-    
+
     metrics_df.to_csv(f"./trace/{trace_file}.csv", index=False)
 
 metrics_df_all = pd.DataFrame(metrics_dict)
 
-test_labels = {"java-60s": "Java (60s)", "bedrock-60s": "Bedrock (60s)"}
+test_labels = {"java-60s": "Java (TCP)", "bedrock-60s": "Bedrock (UDP)"}
 
 # Gráfico do total de pacotes
-total_packets_values = [5000, 3000] 
-plt.figure(figsize=(12, 6))
+total_packets_values = [96849, 348204]
+plt.figure(figsize=(6.4, 4.8))
 plt.bar(trace_files, total_packets_values)
 plt.title("Total de Pacotes por Teste")
-plt.xlabel("Teste")
+#plt.xlabel("Teste")
 plt.ylabel("Total de Pacotes")
 plt.xticks(ticks=range(len(test_labels)), labels=[test_labels[file] for file in trace_files], rotation=45)
 plt.tight_layout()
@@ -97,9 +97,9 @@ plt.close()
 
 # Gráfico do tamanho médio dos pacotes
 plt.figure(figsize=(12, 6))
-metrics_df_all.plot(kind="bar", x="test_name", y="average_packet_size_kb", legend=False)
+metrics_df_all.plot(kind="bar", y="average_packet_size_kb", legend=False)
 plt.title("Tamanho Médio dos Pacotes por Teste")
-plt.xlabel("Teste")
+#plt.xlabel("Teste")
 plt.ylabel("Tamanho Médio dos Pacotes (kB)")
 plt.xticks(ticks=range(len(test_labels)), labels=[test_labels[file] for file in trace_files], rotation=45)
 plt.tight_layout()
@@ -108,9 +108,9 @@ plt.close()
 
 # Gráfico da latência média
 plt.figure(figsize=(12, 6))
-metrics_df_all.plot(kind="bar", x="test_name", y="average_latency_ms", legend=False)
+metrics_df_all.plot(kind="bar", y="average_latency_ms", legend=False)
 plt.title("Latência Média por Teste")
-plt.xlabel("Teste")
+#plt.xlabel("Teste")
 plt.ylabel("Latência Média (ms)")
 plt.xticks(ticks=range(len(test_labels)), labels=[test_labels[file] for file in trace_files], rotation=45)
 plt.tight_layout()
